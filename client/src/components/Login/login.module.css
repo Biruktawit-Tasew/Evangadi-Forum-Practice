@@ -1,47 +1,52 @@
 .container__wrapper{
-   
+    flex: 1;
     display: flex;
     justify-content: center;
     margin-top: 10vh;
-    width: 100%;
-}
-.container__wrapper{
-    background-color: #F8F8F8;
-    background-image: url("../../img/download.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+   
 }
 .login__container {
+    flex: 1;
     background-color: white;
     padding: 50px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     width: 605px;
     height: 517px;
-    /* max-width: 450px; */
+    /* max-width: 600px; */
+    
+    
 }
+
 .login__container h1 {
     text-align: center;
     margin-bottom: 24px;
     color: #333;
     font-size: 24px;
 }
+
 .form {
     position: relative;
     margin-bottom: 30px;
 }
 
+.form label {
+    display: block;
+    margin-bottom: 10px;
+    color: #121111;
+    /* font-weight: bold; */
+}
+/* .parent{
+    position: relative;
+
+} */
 .form input {
     background-color: #E7F0FE;
-    min-width: 300px; 
-    max-width: 625px; 
     width: 100%;
     padding: 12px;
     border: 1px solid #dee2e6;
     border-radius: 4px;
     font-size: 16px;
-    box-sizing: border-box;
 }
 
 .form input:focus {
@@ -52,15 +57,10 @@
 .form input:hover{
     box-shadow: 0 0 0 2px rgba(65, 5, 129, 0.25);
 }
-.form input{
-    color: #6c757d;
-    padding: 20px;
-    background-color: white;
-}
+
 .login__button {
-    min-width: 300px; 
-    max-width: 625px; 
-    width: 100%; 
+    /* position:absolute ; */
+    width: 425px;
     padding: 12px;
     background-color: #526cf0;
     color: white;
@@ -69,14 +69,10 @@
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
-    box-sizing: border-box;
+}
 
-}
-.login__button{
-    padding: 20px;
-}
 .login__button:hover {
-    background-color: #3150ee;
+    background-color: #601eb5;
 }
 
 .forget {
@@ -93,7 +89,6 @@
     /* margin: 0px 0; */
 }
 .signup {
-    font-size: 18px;
     text-align: center;
     margin-top: 24px;
     color: #666;
@@ -109,12 +104,10 @@
 .eye{
     position: sticky;
     position: absolute;
-    right:25px;
-    top: 15px;
-   
+    right:3px;
+    top: 8px;
     color: #EAC0C1;
 }
 .eye:hover{
-    color: #fa972b;
+    color: #fa972b;
 }
-
