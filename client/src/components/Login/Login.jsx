@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import axios from '../../axiosConfig'
+import axios from '../../Api/axios'
 import styles from './login.module.css'
 import { BiSolidHide, BiShow } from "react-icons/bi";  
 
