@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router-dom";
 import axios from '../../axiosConfig'
 import styles from './login.module.css'
 import { BiSolidHide, BiShow } from "react-icons/bi";  
@@ -22,12 +22,17 @@ function LogIn() {
         }
 
         try {
-            await axios.post('/users/login', {
+           const{data}=await axios.post('/users/login', {
                 email: emailValue,
                 password: passValue,
             })
             alert('Login successful');
+             
+            localStorage.setItem("token", data.token);
+
+
             navigate('/');
+            console.log(data)
         } catch (error) {
             alert(error?.response?.data?.msg);
             console.log(error.response.data);
@@ -39,55 +44,46 @@ function LogIn() {
     };
 
     return (
-      <section>
-        <div className={styles.container__wrapper}>
-          <div className={styles.login__container}>
-            <h1>Login to your account</h1>
-            <div className={styles.signup}>
-              Don’t have an account?{" "}
-              <a href="/Auth/signup">Create a new account</a>
-            </div>
-            <br />
+        <section>
+            <div className={styles.container__wrapper}>
+                <div className={styles.login__container}>
+                    <h1>Login to your account</h1>
+                    <div className={styles.signup}>
+                        Don’t have an account? <a href="#">Create a new account</a>
+                    </div>
+                    <br />
 
-            <form onSubmit={handleSubmit}>
-              <div className={styles.form}>
-                <input
-                  className={styles.email}
-                  type="email"
-                  placeholder="Email address"
-                  id="email"
-                  ref={emailDom}
-                  required
-                />
-              </div>
+                    <form onSubmit={handleSubmit}>
+                        <div className={styles.form}>
+                            <input className={styles.email} type="email" placeholder="Email address" id="email" ref={emailDom} required />
+                        </div>
 
-              <div className={styles.form}>
-                <input
-                  className={styles.parent}
-                  type={passwordVisible ? "text" : "password"}
-                  placeholder="********"
-                  id="password"
-                  ref={passwordDom}
-                  required
-                />
-                <div onClick={togglePasswordVisibility}>
-                  {passwordVisible ? (
-                    <BiShow size={30} className={styles.eye} />
-                  ) : (
-                    <BiSolidHide size={30} className={styles.eye} />
-                  )}
+                        <div className={styles.form}>
+                            <input 
+                                className={styles.parent} 
+                                type={passwordVisible ? "text" : "password"} 
+                                placeholder="********" 
+                                id="password" 
+                                ref={passwordDom} 
+                                required 
+                            />
+                            <div onClick={togglePasswordVisibility}>
+                                {passwordVisible ? (
+                                    <BiShow size={30} className={styles.eye} />
+                                ) : (
+                                    <BiSolidHide size={30} className={styles.eye} />
+                                )}
+                            </div>
+                        </div>
+                        <div className={styles.forget}>
+                            <a href="#">Forgot password?</a>
+                        </div>
+                        <button type="submit" className={styles.login__button}>Login</button>
+                    </form>
+         <Link to={'/register'}>Login</Link>
                 </div>
-              </div>
-              <div className={styles.forget}>
-                <a href="/Auth/signup">Forgot password?</a>
-              </div>
-              <button type="submit" className={styles.login__button}>
-                Login
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
+            </div>
+        </section>
     );
 }
 

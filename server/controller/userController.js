@@ -79,7 +79,7 @@ async function login(req, res) {
     const token = jwt.sign({ username, userid }, "secret", { expiresIn: "1d" });
     return res
       .status(StatusCodes.OK)
-      .json({ msg: "user Login Successful ", token });
+      .json({ msg: "user Login Successful ", token, userid });
   } catch (error) {
     console.log(error.message);
     res
