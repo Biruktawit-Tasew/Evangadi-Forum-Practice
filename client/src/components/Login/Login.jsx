@@ -45,7 +45,7 @@ function LogIn() {
             <h1>Login to your account</h1>
             <div className={styles.signup}>
               Don’t have an account?{" "}
-              <a href="/Auth/signup">Create a new account</a>
+              <a href="/signup">Create a new account</a>
             </div>
             <br />
 
@@ -79,7 +79,7 @@ function LogIn() {
                 </div>
               </div>
               <div className={styles.forget}>
-                <a href="/Auth/signup">Forgot password?</a>
+                <a href="/signup">Forgot password?</a>
               </div>
               <button type="submit" className={styles.login__button}>
                 Login
