@@ -146,7 +146,7 @@ const SignUp = () => {
       )}
       <h2>Join the network</h2>
       <p>
-        Already have an account?<Link to="/Auth">Sign in</Link>
+        Already have an account?<Link to="/signin">Sign in</Link>
       </p>
 
       <form onSubmit={handleSubmit}>
@@ -253,7 +253,7 @@ const SignUp = () => {
           )}
         </button>
       </form>
-      <Link to="/Auth" className={css.account}>
+      <Link to="/signin" className={css.account}>
         Already have an account?
       </Link>
     </div>

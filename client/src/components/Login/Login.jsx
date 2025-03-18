@@ -44,46 +44,48 @@ function LogIn() {
     };
 
     return (
-        <section>
-            <div className={styles.container__wrapper}>
-                <div className={styles.login__container}>
-                    <h1>Login to your account</h1>
-                    <div className={styles.signup}>
-                        Don’t have an account? <a href="#">Create a new account</a>
-                    </div>
-                    <br />
+      <section>
+        <div className={styles.container__wrapper}>
+          <div className={styles.login__container}>
+            <h1>Login to your account</h1>
+            <div className={styles.signup}>
+              Don’t have an account?{" "}
+              <a href="/signup">Create a new account</a>
+            </div>
+            <br />
 
                     <form onSubmit={handleSubmit}>
                         <div className={styles.form}>
                             <input className={styles.email} type="email" placeholder="Email address" id="email" ref={emailDom} required />
                         </div>
 
-                        <div className={styles.form}>
-                            <input 
-                                className={styles.parent} 
-                                type={passwordVisible ? "text" : "password"} 
-                                placeholder="********" 
-                                id="password" 
-                                ref={passwordDom} 
-                                required 
-                            />
-                            <div onClick={togglePasswordVisibility}>
-                                {passwordVisible ? (
-                                    <BiShow size={30} className={styles.eye} />
-                                ) : (
-                                    <BiSolidHide size={30} className={styles.eye} />
-                                )}
-                            </div>
-                        </div>
-                        <div className={styles.forget}>
-                            <a href="#">Forgot password?</a>
-                        </div>
-                        <button type="submit" className={styles.login__button}>Login</button>
-                    </form>
-         <Link to={'/register'}>Login</Link>
+              <div className={styles.form}>
+                <input
+                  className={styles.parent}
+                  type={passwordVisible ? "text" : "password"}
+                  placeholder="********"
+                  id="password"
+                  ref={passwordDom}
+                  required
+                />
+                <div onClick={togglePasswordVisibility}>
+                  {passwordVisible ? (
+                    <BiShow size={30} className={styles.eye} />
+                  ) : (
+                    <BiSolidHide size={30} className={styles.eye} />
+                  )}
                 </div>
-            </div>
-        </section>
+              </div>
+              <div className={styles.forget}>
+                <a href="/signup">Forgot password?</a>
+              </div>
+              <button type="submit" className={styles.login__button}>
+                Login
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
     );
 }
 
