@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import axiosInstance from "../../Api/axios";
+import axios from "../../Api/axios";
 import { useNavigate } from "react-router";
 import css from "./signUp.module.css";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
@@ -9,8 +9,8 @@ import { Link } from "react-router";
 const SignUp = () => {
   const [formData, setFormData] = useState({
     username: "",
-    first_name: "",
-    last_name: "",
+    firstname: "",
+    lastname: "",
     email: "",
     password: "",
   });
@@ -39,8 +39,8 @@ const SignUp = () => {
 
     const isAllFieldsEmpty =
       !formData.username &&
-      !formData.first_name &&
-      !formData.last_name &&
+      !formData.firstname &&
+      !formData.lastname &&
       !formData.email &&
       !formData.password;
 
@@ -57,14 +57,14 @@ const SignUp = () => {
       return false;
     }
 
-    if (!formData.first_name) {
-      newErrors.first_name = true;
+    if (!formData.firstname) {
+      newErrors.firstname = true;
       setErrors(newErrors);
       return false;
     }
 
-    if (!formData.last_name) {
-      newErrors.last_name = true;
+    if (!formData.lastname) {
+      newErrors.lastname = true;
       setErrors(newErrors);
       return false;
     }
@@ -105,7 +105,8 @@ const SignUp = () => {
     if (!validateForm()) return;
     setLoading(true);
     try {
-      const response = await axiosInstance.post("/users/register", formData);
+      console.log(formData);
+      const response = await axios.post("/users/register", formData);
       setSuccessMessage(response.data.message);
       setErrors({});
 
@@ -168,12 +169,12 @@ const SignUp = () => {
           <div className={css.formGroup}>
             <input
               type="text"
-              name="first_name"
-              value={formData.first_name}
+              name="firstname"
+              value={formData.firstname}
               onChange={handleChange}
               placeholder="First Name"
               style={{
-                borderColor: errors.first_name ? "red" : "",
+                borderColor: errors.firstname ? "red" : "",
               }}
             />
           </div>
@@ -181,12 +182,12 @@ const SignUp = () => {
           <div className={css.formGroup}>
             <input
               type="text"
-              name="last_name"
-              value={formData.last_name}
+              name="lastname"
+              value={formData.lastname}
               onChange={handleChange}
               placeholder="Last Name"
               style={{
-                borderColor: errors.last_name ? "red" : "",
+                borderColor: errors.lastname ? "red" : "",
               }}
             />
           </div>

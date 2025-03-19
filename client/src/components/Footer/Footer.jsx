@@ -3,10 +3,8 @@ import style from "./footer.module.css";
 import logo from "../../assets/evangadi-logo-footer.png";
 import { FaFacebookF } from "react-icons/fa";
 import { TiSocialInstagram } from "react-icons/ti";
-
+import { Link } from "react-router-dom";
 import { FaYoutube } from "react-icons/fa6";
-
-
 
 function Footer() {
   return (
@@ -15,44 +13,44 @@ function Footer() {
         {/* left side links wrapper */}
         <div className={style.left_side_links}>
           <div className={style.footer_logo}>
-            <a href="/">
+            <Link to="/">
               <img src={logo} alt="" />
-            </a>
+            </Link>
           </div>
           <div className={style.footer_icons}>
-            <a href="https://www.facebook.com/evangaditech" target="_blank">
+            <Link to="https://www.facebook.com/evangaditech" target="_blank">
               <FaFacebookF size={30} />
-            </a>
-            <a href="https://www.instagram.com/evangaditech" target="_blank">
+            </Link>
+            <Link to="https://www.instagram.com/evangaditech" target="_blank">
               <TiSocialInstagram size={30} />
-            </a>
-            <a href="https://www.youtube.com/@EvangadiTech" target="_blank">
+            </Link>
+            <Link to="https://www.youtube.com/@EvangadiTech" target="_blank">
               <FaYoutube size={30} />
-            </a>
+            </Link>
           </div>
         </div>
         {/* middle links wrapper */}
         <div className={style.middle_links}>
           <h4>Useful link</h4>
           <p>
-            <a href="how-it-works">How it works</a>
+            <Link to="/howItWorks">How it Works</Link>
           </p>
           <p>
-            <a href="https://www.evangadi.com/legal/terms/" target="_blank">
+            <Link to="https://www.evangadi.com/legal/terms/" target="_blank">
               Terms of Service
-            </a>
+            </Link>
           </p>
           <p>
-            <a href="https://www.evangadi.com/legal/privacy/" target="_blank">
+            <Link to="https://www.evangadi.com/legal/privacy/" target="_blank">
               Privacy policy
-            </a>
+            </Link>
           </p>
         </div>
         {/* right side links wrapper */}
         <div className={style.right_side_links}>
           <h4>Contact Info</h4>
           <p>
-            <a href="/">Evangadi Networks</a>
+            <Link to="/">Evangadi Networks</Link>
           </p>
           <p>support@evangadi.com</p>
           <p>+1-202-386-2702</p>
