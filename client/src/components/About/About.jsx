@@ -19,7 +19,7 @@ const About = () => {
           to meet mentors of your own, please start by joining the network here.
         </p>
         <div>
-          <Link to="/how-it-works">
+          <Link to="/howItWorks">
             <button className={styles.button}>HOW IT WORKS</button>
           </Link>
         </div>

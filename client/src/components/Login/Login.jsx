@@ -1,92 +1,95 @@
 import { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import axios from '../../Api/axios'
-import styles from './login.module.css'
-import { BiSolidHide, BiShow } from "react-icons/bi";  
+import axios from "../../Api/axios";
+import styles from "./login.module.css";
+import { BiSolidHide, BiShow } from "react-icons/bi";
 
 function LogIn() {
-    const navigate = useNavigate();
-    const emailDom = useRef();
-    const passwordDom = useRef();
-    const [passwordVisible, setPasswordVisible] = useState(false);  
+  const navigate = useNavigate();
+  const emailDom = useRef();
+  const passwordDom = useRef();
+  const [passwordVisible, setPasswordVisible] = useState(false);
 
-    async function handleSubmit(e) {
-        e.preventDefault();
+  async function handleSubmit(e) {
+    e.preventDefault();
 
-        const emailValue = emailDom.current.value;
-        const passValue = passwordDom.current.value;
+    const emailValue = emailDom.current.value;
+    const passValue = passwordDom.current.value;
 
-        if (!emailValue || !passValue) {
-            alert("Please provide all required information");
-            return;
-        }
-
-        try {
-           const{data}=await axios.post('/users/login', {
-                email: emailValue,
-                password: passValue,
-            })
-            alert('Login successful');
-             
-            localStorage.setItem("token", data.token);
-
-
-            navigate('/');
-            console.log(data)
-        } catch (error) {
-            alert(error?.response?.data?.msg);
-            console.log(error.response.data);
-        }
+    if (!emailValue || !passValue) {
+      alert("Please provide all required information");
+      return;
     }
+    console.log(emailValue, passValue);
+    try {
+      const { data } = await axios.post("/users/login", {
+        email: emailValue,
+        password: passValue,
+      });
+      console.log(data.token);
+      localStorage.setItem("token", data.token);
 
-    const togglePasswordVisibility = () => {
-        setPasswordVisible(prevState => !prevState);
-    };
+      navigate("/home");
+    } catch (error) {
+      alert(error?.response?.data?.msg);
+      console.log(error?.response?.data.msg);
+    }
+  }
 
-    return (
-      <section>
-        <div className={styles.container__wrapper}>
-          <div className={styles.login__container}>
-            <h1>Login to your account</h1>
-            <div className={styles.signup}>
-              Don’t have an account?{" "}
-              <a href="/signup">Create a new account</a>
-            </div>
-            <br />
+  const togglePasswordVisibility = () => {
+    setPasswordVisible((prevState) => !prevState);
+  };
 
-                    <form onSubmit={handleSubmit}>
-                        <div className={styles.form}>
-                            <input className={styles.email} type="email" placeholder="Email address" id="email" ref={emailDom} required />
-                        </div>
-
-              <div className={styles.form}>
-                <input
-                  className={styles.parent}
-                  type={passwordVisible ? "text" : "password"}
-                  placeholder="********"
-                  id="password"
-                  ref={passwordDom}
-                  required
-                />
-                <div onClick={togglePasswordVisibility}>
-                  {passwordVisible ? (
-                    <BiShow size={30} className={styles.eye} />
-                  ) : (
-                    <BiSolidHide size={30} className={styles.eye} />
-                  )}
-                </div>
-              </div>
-              <div className={styles.forget}>
-                <a href="/signup">Forgot password?</a>
-              </div>
-              <button type="submit" className={styles.login__button}>
-                Login
-              </button>
-            </form>
+  return (
+    <section>
+      <div className={styles.container__wrapper}>
+        <div className={styles.login__container}>
+          <h1>Login to your account</h1>
+          <div className={styles.signup}>
+            Don’t have an account? <a href="/signup">Create a new account</a>
           </div>
+          <br />
+
+          <form onSubmit={handleSubmit}>
+            <div className={styles.form}>
+              <input
+                className={styles.email}
+                type="email"
+                placeholder="Email address"
+                id="email"
+                ref={emailDom}
+                required
+              />
+            </div>
+
+            <div className={styles.form}>
+              <input
+                className={styles.parent}
+                type={passwordVisible ? "text" : "password"}
+                placeholder="********"
+                id="password"
+                ref={passwordDom}
+                required
+              />
+              <div onClick={togglePasswordVisibility}>
+                {passwordVisible ? (
+                  <BiShow size={30} className={styles.eye} />
+                ) : (
+                  <BiSolidHide size={30} className={styles.eye} />
+                )}
+              </div>
+            </div>
+            <div className={styles.forget}>
+              <a href="/signup">Forgot password?</a>
+            </div>
+            <button type="submit" className={styles.login__button}>
+              Login
+            </button>
+          </form>
         </div>
-      </section>
-    );
+      </div>
+    </section>
+  );
 }
 
 export default LogIn;
