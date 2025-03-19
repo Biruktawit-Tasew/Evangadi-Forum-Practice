@@ -14,7 +14,7 @@ async function allQuestions(req, res) {
     // Execute multiple asynchronous operations concurrently and wait for all of them to complete before proceeding
     const allQuestions = await Promise.all(
       question.map(async (question) => {
-        const questionId = question.id;
+        const questionId = question.question_id;
         const title = question.title;
         const content = question.description;
         const userId = question.user_id;

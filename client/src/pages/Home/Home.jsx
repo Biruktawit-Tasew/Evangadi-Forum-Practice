@@ -67,7 +67,7 @@ const Home = () => {
         ) : questions.length > 0 ? (
           questions.map((q) => (
             <Link
-              to={`/question/${q.question_id}`} // Use question_id for navigation
+              to={`/answer/${q.question_id}`} // Use question_id for navigation
               key={q.question_id}
               className={styles.listItem}
             >
