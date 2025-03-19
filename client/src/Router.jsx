@@ -6,7 +6,7 @@ import SignUp from "./components/SignUp/SignUp";
 import Home from "./pages/Home/Home";
 import Question from "./pages/Question/Question";
 import HowItWorks from "./pages/HowItWorks/HowItWorks";
-
+import Answer from "./pages/Answer/Answer";
 const Router = () => {
   return (
     <BrowserRouter>
@@ -23,7 +23,7 @@ const Router = () => {
           {/* Question page Route */}
           <Route path="/question" element={<Question />} />
           {/* Answer page Route */}
-
+          <Route path="/answer/:question_id" element={<Answer />} />
           {/* How It Works Page Route */}
           <Route path="/howItWorks" element={<HowItWorks />} />
         </Route>

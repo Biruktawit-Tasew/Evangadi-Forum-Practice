@@ -11,6 +11,8 @@
   --shade-color: #f57b2f;
   --primary-font: "Poppins", sans-serif;
   --secondary-font: "Inter", sans-serif;
+  --old-button-color: #516cf0;
+  --old-button-hover-color: #0b5ed7;
 }
 body {
   font-family: "Poppins", sans-serif;
