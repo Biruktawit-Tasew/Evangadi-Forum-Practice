@@ -23,7 +23,12 @@
   /* padding-right: 40px; */
   color: white;
 }
-
+.middle_links , .right_side_links,.left_side_links{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .middle_links a,
 .middle_links p,
 .right_side_links a,
@@ -33,13 +38,13 @@
   text-decoration: none;
   margin-bottom: 6px;
 }
-svg{
+.footer_icons svg{
   border: 1px solid white;
   border-radius: 50%;
   padding: 5px;
   margin-right: 20px;
 }
-svg:hover{
+.footer_icons svg:hover{
   background: white;
   color: #84B4FE;
 }
@@ -59,10 +64,12 @@ svg:hover{
 
 @media (max-width: 768px) {
   .footer_inner_container {
-    display: block;
-    padding: 50px 20px;
-    margin:0 auto ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 70%;
+    margin-top: 3em;
   }
   .footer_inner_container h4 {
     margin-top: 20px;

@@ -4,13 +4,13 @@ import styles from "./header.module.css";
 import { Link } from "react-router-dom";
 import { AppState } from "../../App";
 const Header = () => {
-  const { user } = useContext(AppState);
+  const { user ,dispatch} = useContext(AppState);
 
   return (
     <div className={styles.header}>
       <div className={styles.header_container}>
         <div className={styles.header_logo}>
-          <Link to="/">
+          <Link to="/home">
             <img src={EvangadiLogo} alt="img" />
           </Link>
         </div>
@@ -24,11 +24,12 @@ const Header = () => {
                 <Link to="/howItWorks">How it Works</Link>
               </li>
               <Link
-                to={user ? "/" : "https://www.evangadi.com/"}
+                to="https://www.evangadi.com/"
                 target="_blank"
                 className={styles.button}
               >
-                {user ? "SIGN OUT" : "JOIN THE COMMUNITY"}
+                {/* {user ? "SIGN OUT" : "JOIN THE COMMUNITY"} */}
+                JOIN THE COMMUNITY
               </Link>
             </ul>
           </nav>
