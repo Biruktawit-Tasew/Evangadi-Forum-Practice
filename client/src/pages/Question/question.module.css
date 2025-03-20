@@ -1,95 +1,62 @@
-.main_wrapper {
-  font-family: "Poppins", sans-serif;
-  max-width: 600px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
+.main_wrapper{
+    width: 50%;
+    padding: 20px;
+    margin: 5em auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3em;
 
-h2 {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #333;
-  text-align: center;
-  margin-bottom: 1rem;
 }
+ul{
+    list-style: none;
 
-.line {
-  width: 100%;
-  height: 4px;
-  background: #fe6613;
-  border-radius: 2px;
-  margin-bottom: 1.5rem;
 }
+ul li{
+  margin-top: 10px;
+  padding-left: 30px;
 
-ul {
-  list-style: none;
-  padding: 0;
 }
-
-ul li {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 0.8rem;
+form input,textarea{
+    width: 900px;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid gainsboro;
+    border-radius: 15px;
 }
-
-ul li svg {
-  color: #fe6613;
+button{
+    margin-top: 10px;
+    background-color: rgb(27, 130, 247);
+    border: none;
+    border-radius: 3px;
+    padding: 7px 10px ;
+    color: white;
 }
-
-.post {
-  margin-top: 1.5rem;
-  font-size: 1.5rem;
-  text-align: center;
-  color: #222;
+.post{
+    text-align: center;
+    margin-top: 40px;
 }
-
-form {
+svg{
+    margin-right: 7px;
+}
+.line{
+    width: 200px;
+    height: 2px;
+    background-color: red;
+    margin: 10px;
+}
+.questionCard {
+  box-shadow: 4px 4px 8px rgba(17, 1, 1, 0.1);
+  width: 1000px;
+  border-radius: 15px;
+}
+.question_card_content {
+  width: 80%;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  margin-top: 1rem;
+  align-items: center;
+  justify-self: center;
+  padding-bottom: 3em;
 }
 
-input,
-textarea {
-  width: 100%;
-  padding: 12px;
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: all 0.3s ease-in-out;
-}
-
-input:focus,
-textarea:focus {
-  border-color: #fe6613;
-  outline: none;
-  box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.3);
-}
-
-textarea {
-  resize: vertical;
-}
-
-button {
-  width: 100%;
-  padding: 12px;
-  font-size: 1rem;
-  font-weight: bold;
-  color: #fff;
-  background: #fe6613;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s ease-in-out;
-}
-
-button:hover {
-  background: #fe6613;
-}

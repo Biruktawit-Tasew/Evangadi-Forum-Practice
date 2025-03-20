@@ -29,32 +29,35 @@ function Footer() {
             </Link>
           </div>
         </div>
-        {/* middle links wrapper */}
-        <div className={style.middle_links}>
-          <h4>Useful link</h4>
-          <p>
-            <Link to="/howItWorks">How it Works</Link>
-          </p>
-          <p>
-            <Link to="https://www.evangadi.com/legal/terms/" target="_blank">
-              Terms of Service
-            </Link>
-          </p>
-          <p>
-            <Link to="https://www.evangadi.com/legal/privacy/" target="_blank">
-              Privacy policy
-            </Link>
-          </p>
-        </div>
-        {/* right side links wrapper */}
-        <div className={style.right_side_links}>
-          <h4>Contact Info</h4>
-          <p>
-            <Link to="/">Evangadi Networks</Link>
-          </p>
-          <p>support@evangadi.com</p>
-          <p>+1-202-386-2702</p>
-        </div>
+          {/* middle links wrapper */}
+          <div className={style.middle_links}>
+            <h4>Useful link</h4>
+            <p>
+              <Link to="/howItWorks">How it Works</Link>
+            </p>
+            <p>
+              <Link to="https://www.evangadi.com/legal/terms/" target="_blank">
+                Terms of Service
+              </Link>
+            </p>
+            <p>
+              <Link
+                to="https://www.evangadi.com/legal/privacy/"
+                target="_blank"
+              >
+                Privacy policy
+              </Link>
+            </p>
+          </div>
+          {/* right side links wrapper */}
+          <div className={style.right_side_links}>
+            <h4>Contact Info</h4>
+            <p>
+              <Link to="/">Evangadi Networks</Link>
+            </p>
+            <p>support@evangadi.com</p>
+            <p>+1-202-386-2702</p>
+          </div>
       </section>
     </section>
   );

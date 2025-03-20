@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
 const cors = require("cors");
 const port = 2017;
@@ -15,6 +16,8 @@ const questionRoute = require("./routes/questionRoute");
 const { StatusCodes } = require("http-status-codes");
 // json middleware to extract json data
 app.use(express.json());
+//cors policy
+app.use(cors());
 // user route middleware
 app.use("/api/users", userRoutes);
 

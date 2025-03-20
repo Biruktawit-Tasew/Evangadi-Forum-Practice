@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from "react";
 import { FaCircleArrowRight } from "react-icons/fa6";
 import styles from "./question.module.css";
@@ -44,42 +43,53 @@ const Question = () => {
 
   return (
     <section className={styles.main_wrapper}>
-      <h2>Steps To Write A Good Question</h2>
-      <div className={styles.line}></div>
-      <ul>
-        <li>
-          <FaCircleArrowRight size={12} />
-          Summarize your problem in a one-line title
-        </li>
-        <li>
-          <FaCircleArrowRight size={12} />
-          Describe your problem in more detail
-        </li>
-        <li>
-          <FaCircleArrowRight size={12} />
-          Describe what you tried and what you expected to happen
-        </li>
-        <li>
-          <FaCircleArrowRight size={12} />
-          Provide any relevant code or examples
-        </li>
-        <li>
-          <FaCircleArrowRight size={12} />
-          Review your question and post it here
-        </li>
-      </ul>
-      <h2 className={styles.post}>Post Your Question</h2>
+      <div className={styles.summary}>
+        <h2>Steps To Write A Good Question</h2>
+        <div className={styles.line}></div>
+        <ul>
+          <li>
+            <FaCircleArrowRight size={12} />
+            Summarize your problem in a one-line title
+          </li>
+          <li>
+            <FaCircleArrowRight size={12} />
+            Describe your problem in more detail
+          </li>
+          <li>
+            <FaCircleArrowRight size={12} />
+            Describe what you tried and what you expected to happen
+          </li>
+          <li>
+            <FaCircleArrowRight size={12} />
+            Provide any relevant code or examples
+          </li>
+          <li>
+            <FaCircleArrowRight size={12} />
+            Review your question and post it here
+          </li>
+        </ul>
+      </div>
+      <div className={styles.questionCard}>
+        <div className={styles.question_card_content}>
+          <h2 className={styles.post}>Post Your Question</h2>
 
-      <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Question title" ref={title} required />
-        <textarea
-          rows={7}
-          placeholder="Question"
-          ref={description}
-          required
-        ></textarea>
-        <button type="submit">Post Question</button>
-      </form>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              placeholder="Question title"
+              ref={title}
+              required
+            />
+            <textarea
+              rows={7}
+              placeholder="Question"
+              ref={description}
+              required
+            ></textarea>
+            <button type="submit">Post Question</button>
+          </form>
+        </div>
+      </div>
     </section>
   );
 };
