@@ -1,12 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
 import axios from "../../Api/axios";
-import { useNavigate } from "react-router";
+import { useNavigate, Link } from "react-router-dom";
 import css from "./signUp.module.css";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { ClipLoader } from "react-spinners";
-import { Link } from "react-router";
 
-const SignUp = () => {
+const SignUp = ({ toggleAuth }) => {
   const [formData, setFormData] = useState({
     username: "",
     firstname: "",
@@ -30,7 +29,6 @@ const SignUp = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-
     setErrors((prevErrors) => ({ ...prevErrors, [name]: false }));
   };
 
@@ -77,7 +75,6 @@ const SignUp = () => {
 
     if (formData.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = "Invalid email format";
-
       setErrors(newErrors);
       return false;
     }
@@ -90,7 +87,6 @@ const SignUp = () => {
 
     if (formData.password && formData.password.length < 8) {
       newErrors.password = "Password must be at least 8 characters";
-
       setErrors(newErrors);
       return false;
     }
@@ -129,7 +125,7 @@ const SignUp = () => {
   };
 
   return (
-    <div className={css.signUp_container}>
+    <>
       {allFieldsEmptyError && (
         <p style={{ color: "red" }} className="error-message">
           Please fill out All required fields.
@@ -145,9 +141,12 @@ const SignUp = () => {
           {errors.api}
         </p>
       )}
-      <h2>Join the network</h2>
-      <p>
-        Already have an account?<Link to="/signin">Sign in</Link>
+      <h3>Join the network</h3>
+      <p style={{width: "90%", textAlign:"center"}}>
+        Already have an account?
+        <button onClick={toggleAuth} className={css.toggleButton}>
+          Sign in
+        </button>
       </p>
 
       <form onSubmit={handleSubmit}>
@@ -223,17 +222,16 @@ const SignUp = () => {
             onClick={togglePasswordVisibility}
             style={{
               position: "absolute",
-              right: "20px",
-              top: "30%",
-
-              cursor: "pointer",
+              right: "0px",
+              top: "13px",
+              cursor: "pointer"
             }}
           >
             {showPassword ? (
-              <FaEye style={{ color: "#fc9105" }} />
+              <FaEye size={32} style={{ color: "#eac0c1" }}/>
             ) : (
-              <FaEyeSlash style={{ color: "#fc9105" }} />
-            )}{" "}
+              <FaEyeSlash size={32} style={{ color: "#eac0c1" }} />
+            )}
           </span>
         </div>
         {errors.password && (
@@ -242,8 +240,8 @@ const SignUp = () => {
 
         <div className={css.centeredText}>
           <small>
-            i agree to the <Link to="#">privacy policy</Link> and
-            <a href="#"> term of service</a>
+            I agree to the <Link to="#">privacy policy</Link> and{" "}
+            <Link to="#">term of service</Link>
           </small>
         </div>
         <button type="submit" className={css.signUp_Button}>
@@ -254,10 +252,7 @@ const SignUp = () => {
           )}
         </button>
       </form>
-      <Link to="/signin" className={css.account}>
-        Already have an account?
-      </Link>
-    </div>
+    </>
   );
 };
 
