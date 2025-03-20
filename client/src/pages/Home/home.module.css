@@ -7,23 +7,28 @@
 }
 
 /* Welcome User Section */
+
 .welcomeUser {
-  text-align: right;
-  margin-bottom: 20px;
+  display: flex; /* Enables flexbox */
+  align-items: center; /* Centers items vertically */
+  justify-content: flex-end; /* Aligns content to the right */
+  padding: 10px 20px; /* Adds some spacing */
+  margin-top: 20px;
 }
 
 .welcomeUser h5 {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   margin: 0;
+  font-weight: 300;
+  text-align: right;
+  display: flex; /* Ensures elements inside align properly */
+  align-items: center; /* Centers items vertically */
+  gap: 10px; /* Adds spacing between text and icon */
+}
+.avatar {
+  margin-right: -5px;
 }
 
-.welcomeUser h5 strong {
-  background-color: rgb(185, 185, 185);
-  margin-left: 10px;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 50px;
-}
 
 /* Ask Question Section */
 .askQuestionContainer {
@@ -64,6 +69,7 @@
 
 /* Questions Heading */
 .questionsHeading {
+  font-weight: 600;
   margin-top: 20px;
   padding-bottom: 20px;
   font-size: 1.5rem;
@@ -111,10 +117,12 @@
 /* Question Text */
 .questionText {
   flex-grow: 1;
+  font-weight: lighter;
 }
 
 .questionTitle {
-  font-weight: bold;
+  text-align: start;
+  font-weight: 400;
   margin: 0;
 }
 

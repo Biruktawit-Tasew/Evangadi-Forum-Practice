@@ -18,28 +18,21 @@ const HowItWorks = () => {
       title: "Join the Community",
       description:
         "Sign up for the Evangadi Forum using your Evangadi Networks Bootcamp credentials or create a new account. Connect with fellow bootcamp participants and alumni.",
-      icon: <FaUsers color={"#F6863E"} />,
+      icon: <FaUsers color={"#344767"} />, // Changed color to a more professional tone
     },
     {
       number: 2,
       title: "Ask Questions & Share Knowledge",
       description:
         "Post your questions, share your insights, and engage in discussions related to your bootcamp projects, coding challenges, and career development.",
-      icon: <FaQuestionCircle color={"#F6863E"} />,
+      icon: <FaQuestionCircle color={"#344767"} />,
     },
     {
       number: 3,
       title: "Get Help & Provide Support",
       description:
         "Receive assistance from experienced mentors and peers when you face coding roadblocks. Offer your expertise to help others and build your reputation.",
-      icon: <FaHandsHelping color={"#F6863E"} />,
-    },
-    {
-      number: 4,
-      title: "Stay Updated & Network",
-      description:
-        "Stay informed about workshops, events, and job opportunities. Expand your professional network and connect with potential collaborators and employers.",
-      icon: <FaBullhorn color={"#F6863E"} />,
+      icon: <FaHandsHelping color={"#344767"} />,
     },
   ];
 
@@ -67,28 +60,48 @@ const HowItWorks = () => {
       </div>
 
       <div className={styles.InfoContainer}>
-        <div className={styles.left}>
-          <h1>How it works Introduction</h1>
-
+        <div className={styles.infoSection}>
+          <h3>How It Works Introduction</h3>
           <p>
-            Welcome to EVANGADI FORUM, a platform where technology enthusiasts
-            connect, share, and solve problems collaboratively. Our forum is
-            designed to help you find answers, contribute your knowledge, and
-            engage with a community of like-minded individuals.
+            Welcome to EVANGADI FORUM, a dynamic platform where technology
+            enthusiasts from all backgrounds come together to connect, share
+            ideas, and solve problems collaboratively. Whether you're a beginner
+            exploring the world of tech or an experienced professional looking
+            to exchange insights, our forum provides the perfect space for
+            meaningful discussions. Our goal is to make it easier for you to
+            find solutions, seek guidance, and learn from a community of
+            like-minded individuals who are passionate about technology. Here,
+            you can ask questions, share your expertise, and contribute to
+            discussions that help others grow in their tech journey. By
+            participating in EVANGADI FORUM, you become part of a supportive
+            network where knowledge is freely exchanged, ideas are refined, and
+            innovation thrives. No matter where you are in your tech journey,
+            this is the place to engage, learn, and collaborate with fellow
+            enthusiasts who share your interests.
           </p>
         </div>
-        <div className={styles.left}>
-          <h1>Creating an Account</h1>
+        <div className={styles.infoSection}>
+          <h3>Creating an Account</h3>
           <p>
-            To become a member of our community, please click the 'Sign Up'
-            button located at the top right of the page. Enter your email
-            address, select a username, and create a password. You will receive
-            a confirmation email to activate your account.
+            Joining our community is simple and takes just a few moments. To
+            become a member of EVANGADI FORUM, start by clicking the 'Sign Up'
+            button located at the top right corner of the page. From there,
+            you'll be guided through a quick and easy registration process.
+            Begin by entering your email address, choosing a unique username,
+            and setting a secure password. Once you've completed these steps,
+            we’ll send a confirmation email to the address you provided. Simply
+            click on the link in the email to verify your account and activate
+            your membership. Once your account is activated, you’ll gain full
+            access to the forum, allowing you to ask questions, participate in
+            discussions, and connect with other tech enthusiasts. Becoming a
+            member opens the door to a world of knowledge-sharing,
+            problem-solving, and networking with like-minded individuals who
+            share your passion for technology.
           </p>
         </div>
       </div>
 
-      {/* 5 steps week */}
+      {/* This section remains untouched as per your instructions */}
       <div className={styles.outerContainer}>
         <div className={styles.container}>
           <h2 className={styles.title}>Topics that we cover includes</h2>
@@ -105,8 +118,6 @@ const HowItWorks = () => {
             ))}
           </div>
         </div>
-
-        {/* right-side-image */}
 
         <div className={styles.Rightcontainer}>
           <img src="https://algorithmman.com/wp-content/uploads/2024/04/programming-languages.jpg" />
