@@ -1,22 +1,31 @@
-.signUp_container {
-  width: 90%;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  border-radius: 10px;
-  padding: 20px 50px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  margin-top: 60px;
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+.signUp_container{
+   width: 605px;
+   height: 517px;
+   display: flex; 
+   flex-direction: column;
+   border-radius: 5px;
+   border: none;
+   padding: 20px;
+   margin-top: 110px;
+   margin-left:100px ;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+   font-family: "Nunito", sans-serif;
+}
+.signUp_container h2{
+    font-size: 25px;
+    margin-top: 20px ;
+    
+}
+.signUp_container p{
+    
+    margin-top: 8px ;
+    
 }
 
-.signUp_container h2 {
-  font-size: 25px;
-  margin-top: 20px;
-}
-
-.signUp_container h2,
-p {
-  text-align: center;
+.signUp_container h2, p{
+text-align: center;
 }
 
 .signUp_container p a {
@@ -58,7 +67,7 @@ p {
   outline: none;
 }
 
-/* .formGroup:focus-within::after {
+.formGroup:focus-within::after {
   content: "";
   position: absolute;
   left: 0;
@@ -67,7 +76,7 @@ p {
   height: 2.5px;
   background: var(--secondary-color);
   animation: borderBottomAnimation 0.4s ease-in-out forwards;
-} */
+}
 
 @keyframes borderBottomAnimation {
   from {

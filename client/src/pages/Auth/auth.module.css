@@ -1,3 +1,9 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  /* background-color: #8a6f6f; */
+}
+
 .container-wrapper {
   background-image: url("../../assets/10001.svg");
   display: flex;
@@ -11,15 +17,13 @@
   height: 100vh;
   padding: 20px;
 }
-
-.inner-wrapper {
-  margin-top: 50px;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  justify-content: center;
-  width: 100%;
-  padding-bottom: 150px;
+.inner-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 150px;
 }
 
 .auth-card {

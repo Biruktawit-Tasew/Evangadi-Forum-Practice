@@ -1,40 +1,25 @@
-import React, { useState } from "react";
-import styles from "./auth.module.css";
-import LogIn from "../../components/Login/Login";
-import SignUp from "../../components/SignUp/SignUp";
+import React from "react";
+import { Route, Routes, Outlet } from "react-router-dom";
+
+// import LogIn from "../../components/LogIn/LogIn";
+// import SignUp from "../../components/SignUp/SignUp";
 import About from "../../components/About/About";
-
+import styles from "./auth.module.css";
+import { AppState } from "../../App";
+import { useContext, useEffect } from "react";
 const Auth = () => {
-  const [isLogIn, setIsLogIn] = useState(true);
-  const [direction, setDirection] = useState("");
-
-  const toggleAuthMode = () => {
-    setDirection("toLeft"); // Always slide to left
-    setTimeout(() => {
-      setIsLogIn((prev) => !prev);
-      setDirection("");
-    }, 300); // Matches CSS transition duration
-  };
-
+  // const { user, setUser } = useContext(AppState);
+  // useEffect(() => {
+  //   user && setUser({});
+  //   localStorage.removeItem("token");
+  // }, []);
   return (
     <div className={styles["container-wrapper"]}>
       <div className={styles["inner-wrapper"]}>
         <div className={styles["SignUpSignIn-section"]}>
-          <div className={styles["auth-card"]}>
-            <div className={styles["auth-content-container"]}>
-              <div
-                className={`${styles["auth-content"]} ${
-                  direction === "toLeft"
-                    ? styles["slide-to-left"]
-                    : styles["slide-in"]
-                }`}
-              >
-                {isLogIn ? <LogIn toggleAuth={toggleAuthMode} /> : <SignUp toggleAuth={toggleAuthMode} />}
-              </div>
-            </div>
-          </div>
+          <Outlet />
         </div>
-        <div className={styles["about-section"]}>
+        <div>
           <About />
         </div>
       </div>
