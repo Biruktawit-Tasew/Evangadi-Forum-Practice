@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
 const port = 2017;
 
@@ -12,6 +13,8 @@ const questionRoute = require("./Routes/questionRoute");
 const { StatusCodes } = require("http-status-codes");
 // json middleware to extract json data
 app.use(express.json());
+//cors policy
+app.use(cors());
 // user route middleware
 app.use("/api/users", userRoutes);
 
@@ -33,10 +36,10 @@ async function start() {
   }
 }
 start();
-
+https://evangadi.com/
 //command to create table on mysql
 
-// CREATE TABLE if not exists registration(
+
 // CREATE TABLE if not exists registration(
 // user_id INT(20) NOT NULL AUTO_INCREMENT,
 // username VARCHAR(20) NOT NULL,
@@ -44,7 +47,7 @@ start();
 // password VARCHAR(100) NOT NULL,
 // PRIMARY KEY (user_id)
 // );
-// CREATE TABLE if not exists profile(
+
 // CREATE TABLE if not exists profile(
 // user_profile_id INT(20) NOT NULL AUTO_INCREMENT,
 // user_id INT(20) NOT NULL,

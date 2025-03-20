@@ -6,6 +6,13 @@ import { TiSocialInstagram } from "react-icons/ti";
 
 import { FaYoutube } from "react-icons/fa6";
 
+useEffect(() => {
+  first
+
+  return () => {
+    second
+  }
+}, [third])
 
 
 function Footer() {
