@@ -8,11 +8,11 @@ import styles from "./auth.module.css";
 import { AppState } from "../../App";
 import { useContext, useEffect } from "react";
 const Auth = () => {
-  const { user, setUser } = useContext(AppState);
-  useEffect(() => {
-    user && setUser({});
-    localStorage.removeItem("token");
-  }, []);
+  // const { user, setUser } = useContext(AppState);
+  // useEffect(() => {
+  //   user && setUser({});
+  //   localStorage.removeItem("token");
+  // }, []);
   return (
     <div className={styles["container-wrapper"]}>
       <div className={styles["inner-wrapper"]}>
