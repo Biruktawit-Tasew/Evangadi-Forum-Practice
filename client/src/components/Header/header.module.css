@@ -1,13 +1,13 @@
 .header {
-   width: 100%;
-   height: 75px;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-   padding: 0 40px;
-   background: white;
-} 
+  width: 100%;
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 0 40px;
+  background: white;
+}
 
 .header_container {
   display: flex;
@@ -20,12 +20,11 @@
   width: 15vw;
 }
 
-
 .header_right {
   display: flex;
   align-items: center;
-  flex-grow: 1; 
-  justify-content: flex-end; 
+  flex-grow: 1;
+  justify-content: flex-end;
 }
 
 .header_right ul {
@@ -50,7 +49,7 @@
 }
 /* Button Styling */
 .button {
-  border: none;
+
   background-color: #0079fa;
   color: white;
   padding: 12px 30px;
@@ -60,14 +59,14 @@
   border-radius: 5px;
   font-weight: bold;
   transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 .button:hover {
-  background-color:  #c1d6f0;
+  background-color: #c1d6f0;
   color: #047af8;
 }
 
 .button:active {
   transform: scale(0.95);
 }
-

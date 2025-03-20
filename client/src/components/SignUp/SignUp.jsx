@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import axiosInstance from "../../Api/axios";
+import axios from "../../Api/axios";
 import { useNavigate } from "react-router";
 import css from "./signUp.module.css";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
@@ -105,7 +105,8 @@ const SignUp = () => {
     if (!validateForm()) return;
     setLoading(true);
     try {
-      const response = await axiosInstance.post("/users/register", formData);
+      console.log(formData);
+      const response = await axios.post("/users/register", formData);
       setSuccessMessage(response.data.message);
       setErrors({});
 
