@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { IoIosArrowForward } from "react-icons/io";
 import { IoPersonCircleOutline } from "react-icons/io5";
+import { IoMdPerson } from "react-icons/io";
 import styles from "./home.module.css"; // Import modular CSS
 import axios from "../../Api/axios";
 import { AppState } from "../../App";
@@ -41,7 +42,8 @@ const Home = () => {
       {/* Welcome User (Top Right) */}
       <div className={styles.welcomeUser}>
         <h5>
-          Welcome: <strong>{user.username}</strong>
+          <>Welcome:</><IoMdPerson className={styles.avatar} size={38}/>
+          <strong>{user.username}</strong>
         </h5>
       </div>
 
@@ -84,7 +86,7 @@ const Home = () => {
               </div>
 
               {/* More (Arrow Icon) */}
-              <IoIosArrowForward size={25} className={styles.arrowIcon} />
+              <IoIosArrowForward size={37} className={styles.arrowIcon} />
             </Link>
           ))
         ) : (
