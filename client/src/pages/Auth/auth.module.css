@@ -1,4 +1,5 @@
 .container-wrapper {
+  overflow: hidden;
   background-image: url("../../assets/10001.svg");
   display: flex;
   justify-content: space-between;
@@ -29,9 +30,9 @@
   border-radius: 10px;
   padding: 20px 50px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  margin-top: 60px;
+  margin-top: 100px;
   width: 600px;
-  height: 550px;
+  height: 600px;
   overflow: hidden;
 }
 
@@ -70,18 +71,18 @@
   .auth-card {
     margin: 20px;
     padding: 15px;
-    height: auto;
-    min-height: 550px;
+    min-height: 650px;
+    margin-block: 200px 100px;
+
+    /* height: 600px; */
   }
 }
 
 /* Override Login container styles */
 .login__container {
-  width: 100%;
   padding: 0;
   box-shadow: none;
   border-radius: 0;
-  background: transparent;
 }
 
 /* Override Signup container styles */
@@ -89,5 +90,4 @@
   width: 100%;
   padding: 0;
   box-shadow: none;
-  background: transparent;
 }

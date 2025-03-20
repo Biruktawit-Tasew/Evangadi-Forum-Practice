@@ -44,16 +44,16 @@ function LogIn({ toggleAuth }) {
     <section>
       <div className={styles.login__container}>
         <h1>Login to your account</h1>
-        <div className={styles.signup}>
-          Don’t have an account?{" "}
+        <p style={{width: "90%", textAlign:"center"}}>
+          Don’t have an account?
           <button onClick={toggleAuth} className={styles.toggleButton}>
             Create a new account
           </button>
-        </div>
+        </p>
         <br />
 
         <form onSubmit={handleSubmit}>
-          <div className={styles.form}>
+          <div className={styles.inputWrapper}>
             <input
               className={styles.email}
               type="email"
@@ -64,7 +64,7 @@ function LogIn({ toggleAuth }) {
             />
           </div>
 
-          <div className={styles.form}>
+          <div className={styles.inputWrapper}>
             <input
               className={styles.parent}
               type={passwordVisible ? "text" : "password"}
@@ -75,9 +75,9 @@ function LogIn({ toggleAuth }) {
             />
             <div onClick={togglePasswordVisibility}>
               {passwordVisible ? (
-                <BiShow size={30} className={styles.eye} />
+                <BiShow size={32} className={styles.eye} />
               ) : (
-                <BiSolidHide size={30} className={styles.eye} />
+                <BiSolidHide size={32} className={styles.eye} />
               )}
             </div>
           </div>

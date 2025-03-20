@@ -141,9 +141,9 @@ const SignUp = ({ toggleAuth }) => {
           {errors.api}
         </p>
       )}
-      <h2>Join the network</h2>
-      <p>
-        Already have an account?{" "}
+      <h3>Join the network</h3>
+      <p style={{width: "90%", textAlign:"center"}}>
+        Already have an account?
         <button onClick={toggleAuth} className={css.toggleButton}>
           Sign in
         </button>
@@ -223,14 +223,14 @@ const SignUp = ({ toggleAuth }) => {
             style={{
               position: "absolute",
               right: "0px",
-              top: "21%",
-              cursor: "pointer",
+              top: "13px",
+              cursor: "pointer"
             }}
           >
             {showPassword ? (
-              <FaEye size={27} style={{ color: "#fc9105" }} />
+              <FaEye size={32} style={{ color: "#eac0c1" }}/>
             ) : (
-              <FaEyeSlash size={27} style={{ color: "#fc9105" }} />
+              <FaEyeSlash size={32} style={{ color: "#eac0c1" }} />
             )}
           </span>
         </div>
