@@ -46,5 +46,5 @@
   border: none;
 }
 .about_section .button:hover {
-  background-color: var( --shade-color);
+  background-color: blue;
 }
